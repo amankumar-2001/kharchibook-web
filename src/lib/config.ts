@@ -6,13 +6,13 @@
 export const config = {
   /** auth-service base URL — email/password + OTP, JWT issuance. */
   authUrl: process.env.NEXT_PUBLIC_AUTH_URL ?? "http://localhost:8080",
-  /** autopay-service base URL — expenses, autopays, analytics, gmail. */
-  autopayUrl: process.env.NEXT_PUBLIC_AUTOPAY_URL ?? "http://localhost:8082",
+  /** expense-service base URL — expenses, autopays, analytics, gmail. */
+  expenseUrl: process.env.NEXT_PUBLIC_EXPENSE_URL ?? "http://localhost:8082",
   /**
    * Per-service mock switches. Mocking auth lets the UI run with no backend;
-   * mocking autopay lets login run live while the dashboard data is sampled
-   * (autopay-service doesn't exist yet).
+   * mocking expense samples the dashboard data instead of calling the live
+   * expense-service at expenseUrl.
    */
   mockAuth: process.env.NEXT_PUBLIC_MOCK_AUTH === "1",
-  mockAutopay: process.env.NEXT_PUBLIC_MOCK_AUTOPAY === "1",
+  mockExpense: process.env.NEXT_PUBLIC_MOCK_EXPENSE === "1",
 } as const;

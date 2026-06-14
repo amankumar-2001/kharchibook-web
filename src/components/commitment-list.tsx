@@ -5,7 +5,7 @@ import { Home, Tv, ShieldCheck, TrendingUp, CircleDollarSign } from "lucide-reac
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { confirmAutoPay } from "@/lib/api/autopay";
+import { confirmAutoPay } from "@/lib/api/expense";
 import { inr, ordinalDay } from "@/lib/format";
 import type { AutoPay, AutoPayType } from "@/lib/api/types";
 

@@ -80,7 +80,7 @@ export async function resendOtp(email: string): Promise<void> {
 /**
  * Resolve the current user. auth-service owns only identity (email, verified,
  * roles); profile fields the dashboard wants (name, plan, language, phone) are
- * autopay-service's domain, so we derive sensible defaults until that exists.
+ * expense-service's domain, so we derive sensible defaults for now.
  */
 export async function getMe(): Promise<User> {
   if (config.mockAuth) return mockUser;

@@ -2,7 +2,7 @@
 
 /**
  * JWT storage. MVP keeps the access (and refresh) token in localStorage so the
- * client can attach the access token to autopay-service requests. (When the
+ * client can attach the access token to expense-service requests. (When the
  * services move behind one domain, switch to httpOnly cookies — the API client
  * is the only caller, so the blast radius is small.)
  */

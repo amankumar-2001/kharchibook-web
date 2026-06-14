@@ -1,4 +1,4 @@
-/** Domain types shared by the API layer and the UI. Mirror autopay-service DTOs. */
+/** Domain types shared by the API layer and the UI. Mirror expense-service DTOs. */
 
 export type Language = "hi" | "kn" | "ta" | "en";
 export type Plan = "free" | "premium";

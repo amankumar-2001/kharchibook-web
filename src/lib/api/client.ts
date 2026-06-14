@@ -3,7 +3,7 @@
 import { config } from "@/lib/config";
 import { getToken, clearToken } from "@/lib/auth/token";
 
-export type Service = "auth" | "autopay";
+export type Service = "auth" | "expense";
 
 export class ApiError extends Error {
   constructor(
@@ -16,7 +16,7 @@ export class ApiError extends Error {
 }
 
 function baseUrl(service: Service): string {
-  return service === "auth" ? config.authUrl : config.autopayUrl;
+  return service === "auth" ? config.authUrl : config.expenseUrl;
 }
 
 interface RequestOptions {

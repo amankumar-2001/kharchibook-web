@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { getCommitted, getExpenseSummary, getUpcoming } from "@/lib/api/autopay";
+import { getCommitted, getExpenseSummary, getUpcoming } from "@/lib/api/expense";
 import type {
   CommittedSummary,
   ExpenseSummary,
