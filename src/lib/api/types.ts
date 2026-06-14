@@ -66,6 +66,11 @@ export interface ExpenseSummary {
   byCategory: CategoryTotal[];
 }
 
+export interface Salary {
+  monthlySalary: number;
+  salaryDay: number; // 1–31
+}
+
 export interface CommittedSummary {
   monthlySalary: number;
   salaryDay: number;
