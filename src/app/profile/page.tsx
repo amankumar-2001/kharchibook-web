@@ -8,11 +8,14 @@ import {
   Globe,
   LogOut,
   Mail,
+  MessageCircle,
   Phone,
   ShieldAlert,
 } from "lucide-react";
+import { config } from "@/lib/config";
 import { useAuth } from "@/components/auth-provider";
 import { useTheme } from "@/components/theme-provider";
+import { GmailCard } from "@/components/gmail-card";
 import { NavBar } from "@/components/nav-bar";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -109,6 +112,8 @@ export default function ProfilePage() {
           </CardContent>
         </Card>
 
+        <GmailCard />
+
         <Card>
           <CardHeader>
             <CardTitle>Preferences</CardTitle>
@@ -141,6 +146,44 @@ export default function ProfilePage() {
             </div>
           </CardContent>
         </Card>
+
+        {config.whatsappNumber && (
+          <Card>
+            <CardHeader>
+              <CardTitle>Talk to us on WhatsApp</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                Log expenses and check your money by texting KharchiBook on
+                WhatsApp — no app needed. Try{" "}
+                <span className="font-medium text-foreground">200 sabzi</span>,{" "}
+                <span className="font-medium text-foreground">summary</span>, or{" "}
+                <span className="font-medium text-foreground">autopay list</span>.
+              </p>
+              {user.phone ? (
+                <a
+                  href={`https://wa.me/${config.whatsappNumber}?text=hi`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonVariants({ variant: "default", size: "lg" })}
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden />
+                  Open WhatsApp
+                </a>
+              ) : (
+                <p className="text-xs text-muted-foreground">
+                  Add a phone number to your account first — we recognize you by
+                  the number you message from.
+                </p>
+              )}
+              <p className="text-xs text-muted-foreground">
+                Message from the phone registered on your account
+                {user.phone ? ` (${user.phone})` : ""} so we can link your texts
+                to you.
+              </p>
+            </CardContent>
+          </Card>
+        )}
 
         <Button
           variant="destructive"

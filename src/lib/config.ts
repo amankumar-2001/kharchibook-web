@@ -15,4 +15,10 @@ export const config = {
    */
   mockAuth: process.env.NEXT_PUBLIC_MOCK_AUTH === "1",
   mockExpense: process.env.NEXT_PUBLIC_MOCK_EXPENSE === "1",
+  /**
+   * KharchiBook's WhatsApp business number (digits only, with country code, e.g.
+   * "919876543210"). Used to build the wa.me click-to-chat deep link in the
+   * "Talk to us on WhatsApp" feature. Empty hides the feature.
+   */
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
 } as const;

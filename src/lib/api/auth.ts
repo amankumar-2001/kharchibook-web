@@ -22,6 +22,7 @@ export interface TokenPair {
 interface MeResponse {
   userId: number;
   email: string;
+  name: string;
   verified: boolean;
   provider: string;
   roles: string[];
@@ -90,7 +91,7 @@ export async function getMe(): Promise<User> {
     email: me.email,
     verified: me.verified,
     phone: "",
-    name: me.email.split("@")[0],
+    name: me.name || me.email.split("@")[0],
     language: "en" as Language,
     plan: "free" as Plan,
   };
